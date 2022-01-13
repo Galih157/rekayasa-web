@@ -4,7 +4,7 @@ namespace App\Database\Migrations;
 
 use CodeIgniter\Database\Migration;
 
-class CreateArticlesTable extends Migration
+class CreateUsersTable extends Migration
 {
     public function up()
     {
@@ -15,13 +15,19 @@ class CreateArticlesTable extends Migration
                 'auto_increment' => true
             ],
 
-            'title' => [
+            'name' => [
                 'type' => 'varchar',
                 'constraint' => '255'
             ],
 
-            'content' => [
-                'type' => 'text',
+            'email' => [
+                'type' => 'varchar',
+                'constraint' => '255'
+            ],
+
+            'password' => [
+                'type' => 'varchar',
+                'constraint' => '255'
             ],
 
             'status' => [
@@ -34,11 +40,11 @@ class CreateArticlesTable extends Migration
             'updated_at DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP',
         ])
             ->addPrimaryKey('id')
-            ->createTable('articles');
+            ->createTable('users');
     }
 
     public function down()
     {
-        $this->forge->dropTable('articles');
+        $this->forge->dropTable('users');
     }
 }
