@@ -20,6 +20,11 @@ php spark migrate
 php spark serve
 ```
 
+## Contoh Login User
+Email : johndoe@example.com
+
+Password : 12345678
+
 ## API Endpoints
 ### Article
 
