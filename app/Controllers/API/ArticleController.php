@@ -4,11 +4,12 @@ namespace App\Controllers\API;
 
 use App\Controllers\BaseController;
 use App\Models\Article;
+use App\Traits\UserAuthJwtTrait;
 use CodeIgniter\API\ResponseTrait;
 
 class ArticleController extends BaseController
 {
-    use ResponseTrait;
+    use ResponseTrait, UserAuthJwtTrait;
 
     protected $articleModel;
 
