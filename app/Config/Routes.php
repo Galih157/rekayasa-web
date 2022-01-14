@@ -34,8 +34,9 @@ $routes->setAutoRoute(true);
 $routes->get('/', 'Home::index');
 
 $routes->group('api/v1', ['namespace' => 'App\Controllers\API'], function ($routes) {
-    $routes->post('auth/signin', 'AuthController:signin');
-    $routes->resource('articles', ['controller' => 'ArticleController']);
+    $routes->post('auth/signin', 'AuthController::signin');
+    $routes->post('auth/signup', 'AuthController::signup');
+    $routes->resource('articles', ['controller' => 'ArticleController', 'filter' => 'jwt_auth']);
 });
 
 /*
